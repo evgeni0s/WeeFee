@@ -1,0 +1,28 @@
+<form class="grid-container" [formGroup]="registerForm">
+    <div class="grid-top-row"></div>
+    <div class="grid-main-row">
+        <div class="form-group email-row" [ngClass]="{
+                    'has-error': registerForm.controls.email.invalid,
+                    'has-success': registerForm.controls.email.valid
+                }">
+            <div class="email label">E-mail</div>
+            <input type="text" class="form-control email textfield" formControlName="email" required>
+        </div>
+        <div class="form-group passwords-row" formGroupName="passwords" [ngClass]="{
+                'has-error': registerForm.controls.passwords.invalid,
+                'has-success': registerForm.controls.passwords.valid
+            }">
+            <div class="password label">Password</div>
+            <input type="password" class="form-control password textfield" formControlName="password" required />
+            <div class="password-confirmation label">Confirm Password</div>
+            <input type="password" class="form-control password-confirmation textfield" formControlName="confirmPassword"
+                required />
+        </div>
+        <button type="submit" (click)="CreateNewAccount()" class="btn btn-secondary create-account">Create new account</button>
+        <a [routerLink]="['/login']" class="btn btn-link cancel">Cancel</a>
+    </div>
+    <div class="grid-bottom-row" *ngIf="submitted">
+        <div style='color:#ff7355' *ngIf="registerForm.controls.passwords.invalid">Password does not match</div>
+        <div style='color:#ff7355' *ngIf="registerForm.controls.email.invalid">Email is not correct</div>
+    </div>
+</form>

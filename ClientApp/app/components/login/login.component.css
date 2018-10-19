@@ -1,0 +1,85 @@
+.grid-container
+{
+    display: grid;
+    
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 200px 250px 150px;
+}
+
+.grid-top-row
+{
+grid-row: 1 / 2;
+grid-column: 1 / end;
+}
+
+.grid-main-row
+{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-color: rgb(132, 171, 255);
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40px 20% 20% 20% 20% 10%;
+}
+
+.grid-main-row .label
+{
+    color: white;
+    font-size: 1em;
+}
+
+.grid-main-row .textfield
+{
+    color: rgb(0, 0, 0);
+}
+
+.grid-bottom-row
+{
+    grid-row:3/end;
+    grid-column: 1/end;
+}
+
+/* 1/2 row is just intend from top */
+
+.form-group.email
+{
+    grid-row: 2/3;
+    justify-self: stretch;
+    margin: 0px 10px;
+}
+
+.form-group.password
+{
+    grid-row:2/3;
+    grid-column: 2/3;
+    justify-self: stretch;
+    margin: 0px 10px;
+}
+
+.form-check.keep-signed-in
+{
+    grid-row:3/4;
+    grid-column: 2/3;
+    align-self: center;
+}
+
+
+.label
+{
+    color: White;
+    font-weight: bolder;
+}
+
+.login
+{
+    grid-row: 4/5;
+    grid-column: 1 / span 2;
+}
+
+.create-account
+{
+    grid-row: 5/6;
+    grid-column: 1 / span 2;
+    color: White;
+}

@@ -1,0 +1,26 @@
+<form class="grid-container" [formGroup]="loginForm">
+    <div class="grid-top-row"></div>
+    <div class="grid-main-row">
+        <div class="form-group email" [ngClass]="{
+            'has-error': loginForm.controls.email.invalid,
+            'has-success': loginForm.controls.email.valid
+          }">
+            <div class="email label">E-mail</div>
+            <input type="text" class="form-control email textfield" formControlName="email" required>
+        </div>
+        <div class="form-group password" [ngClass]="{
+            'has-error': loginForm.controls.password.invalid,
+            'has-success': loginForm.controls.password.valid
+          }">
+            <div class="password label">Password</div>
+            <input type="password" class="form-control password textfield" formControlName="password" required/>
+        </div>
+        <div class="form-check keep-signed-in">
+            <input type="checkbox" class="form-check-input keep-signed-in" id="chbKeepSignedIn"/>
+            <label class="form-check-label label" for="chbKeepSignedIn">Keep signed in</label>
+        </div>
+        <button type="submit" (click)="Login()" class="btn btn-primary login">Log In</button>
+        <a [routerLink]="['/register']" class="btn btn-link create-account">Create new account</a>
+    </div>
+    <div class="grid-bottom-row">Logged in success</div>
+  </form>
