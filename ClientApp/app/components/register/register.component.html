@@ -1,4 +1,4 @@
-<form class="grid-container" [formGroup]="registerForm">
+<form class="grid-container" [formGroup]="registerForm" (ngSubmit)="CreateNewAccount()">
     <div class="grid-top-row"></div>
     <div class="grid-main-row">
         <div class="form-group email-row" [ngClass]="{
@@ -18,7 +18,7 @@
             <input type="password" class="form-control password-confirmation textfield" formControlName="confirmPassword"
                 required />
         </div>
-        <button type="submit" (click)="CreateNewAccount()" class="btn btn-secondary create-account">Create new account</button>
+        <button type="submit"  class="btn btn-secondary create-account">Create new account</button>
         <a [routerLink]="['/login']" class="btn btn-link cancel">Cancel</a>
     </div>
     <div class="grid-bottom-row" *ngIf="submitted">

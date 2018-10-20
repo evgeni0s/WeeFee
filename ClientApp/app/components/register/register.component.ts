@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
 
     public CreateNewAccount()
     {
-        debugger;
-console.log('create new account');
+        this.registerForm.value.email;
+        this.registerForm.reset();
     }
 }

@@ -1,0 +1,5 @@
+Database First approach was achived by cmd:
+ dotnet ef dbcontext scaffold "Server=DESKTOP-VH09KB3\LOCALSQLSERVER;Database=WeeFeeDb;Integrated Security=True;" Microsoft.EntityFrameworkCore.SqlServer -o Model -c "WeeFeeDbContext"
+
+ More info:
+ https://www.learnentityframeworkcore.com/walkthroughs/existing-database
